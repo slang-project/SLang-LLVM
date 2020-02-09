@@ -7,7 +7,7 @@
 #include "nlohmann/json.hpp"
 #undef JSON_NOEXCEPTION
 
-#include <optional>
+#include <memory>
 
 namespace SLang::CodeGenerator::Ir
 {
@@ -19,7 +19,7 @@ namespace SLang::CodeGenerator::Ir
      * \param program SLang IR object with program to convert.
      * \return `std::nullopt` - conversion failed; LLVM IR Module with program - otherwise.
      */
-    [[nodiscard]] std::optional<LlvmIr> Convert(const SLangIr &program) noexcept;
+    [[nodiscard]] std::unique_ptr<LlvmIr> Convert(const SLangIr &program) noexcept;
 }
 
 #endif
