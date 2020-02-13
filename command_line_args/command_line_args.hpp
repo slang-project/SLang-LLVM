@@ -25,7 +25,7 @@ namespace SLang::CodeGenerator
          * \param logs Stream where parser's wide character log will go.
          * \return `std::nullopt` - parsing failed; parsed command line arguments' values - otherwise.
          */
-        [[nodiscard]] static std::optional<CommandLineArgs> Parse(
+        [[nodiscard]] static std::optional<const CommandLineArgs> Parse(
             const std::vector<std::string_view> &args,
             std::wostream &outs = std::wcout,
             std::wostream &errs = std::wcerr,

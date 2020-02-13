@@ -23,7 +23,7 @@ bool Driver::Main(
         return false;
     }
 
-    // TODO: move to `std::wifstream` (`std::istream` is required by `nlohmann::json` as for 3.7.3).
+    // TODO: `std::basic_ifstream<char8_t>` (or `std::u8ifstream` if present).
     ifstream in_file(in_path);
     if (!in_file.is_open())
     {

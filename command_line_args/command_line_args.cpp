@@ -4,7 +4,7 @@ using namespace SLang::CodeGenerator;
 
 using namespace std;
 
-optional<CommandLineArgs> CommandLineArgs::Parse(
+optional<const CommandLineArgs> CommandLineArgs::Parse(
     const vector<string_view> &args,
     wostream &outs,
     wostream &errs,

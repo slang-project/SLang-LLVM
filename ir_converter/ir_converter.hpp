@@ -17,9 +17,9 @@ namespace SLang::CodeGenerator::Ir
     /**
      * \brief Convert program represented by SLang IR into LLVM IR Module.
      * \param program SLang IR object with program to convert.
-     * \return `std::nullopt` - conversion failed; LLVM IR Module with program - otherwise.
+     * \return `nullptr` - conversion failed; LLVM IR Module with program - otherwise.
      */
-    [[nodiscard]] std::unique_ptr<LlvmIr> Convert(const SLangIr &program) noexcept;
+    [[nodiscard]] std::unique_ptr<const LlvmIr> Convert(const SLangIr &program) noexcept;
 }
 
 #endif
