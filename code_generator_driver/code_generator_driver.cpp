@@ -23,7 +23,7 @@ bool Driver::Main(
         return false;
     }
 
-    // TODO: `std::basic_ifstream<char8_t>` (or `std::u8ifstream` if present).
+    // TODO: \c std::basic_ifstream<char8_t> (or \c std::u8ifstream if present).
     ifstream in_file(in_path);
     if (!in_file.is_open())
     {
@@ -31,7 +31,7 @@ bool Driver::Main(
         return false;
     }
 
-    // TODO: move to `noexcept` version when it will be available in the library.
+    // TODO: move to \c noexcept version when it will be available in the library.
     const auto parsed_content = nlohmann::json::parse(in_file, nullptr, false);
     in_file.close();
     if (parsed_content.is_discarded())

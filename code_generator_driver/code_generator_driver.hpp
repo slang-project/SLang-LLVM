@@ -8,12 +8,12 @@
 namespace SLang::CodeGenerator::Driver
 {
     /**
-     * \brief Execute code generator.
+     * \brief Execute SLang-to-LLVM code generator.
      * \param args Command line arguments.
      * \param outs Stream where program's wide character output will go.
      * \param errs Stream where program's wide character error will go.
      * \param logs Stream where program's wide character log will go.
-     * \return `true` - program has finished successfully; `false` - otherwise.
+     * \return \c true - program has finished successfully; \c false - otherwise.
      */
     [[nodiscard]] bool Main(
         const CommandLineArgs &args,

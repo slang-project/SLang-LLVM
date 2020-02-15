@@ -21,11 +21,11 @@ namespace SLang::CodeGenerator
 
         /**
          * \brief Parse provided command line arguments for code generator.
-         * \param args Collection of `std::string_view`'s on command line argument strings.
+         * \param args Collection of <tt>std::string_view</tt>s on command line argument strings.
          * \param outs Stream where parser's wide character output will go.
          * \param errs Stream where parser's wide character error will go.
          * \param logs Stream where parser's wide character log will go.
-         * \return `std::nullopt` - parsing failed; parsed command line arguments' values - otherwise.
+         * \return \c std::nullopt - parsing failed; parsed command line arguments' values - otherwise.
          */
         [[nodiscard]] static std::optional<const CommandLineArgs> Parse(
             const std::vector<std::string_view> &args,
@@ -35,13 +35,13 @@ namespace SLang::CodeGenerator
 
         /**
          * \brief Get input file path.
-         * \return Input file path object.
+         * \return Reference to the input file path object.
          */
         [[nodiscard]] const PathType &InputPath() const noexcept;
 
         /**
          * \brief Get output file path.
-         * \return Output file path object.
+         * \return Reference to the output file path object.
          */
         [[nodiscard]] const PathType &OutputPath() const noexcept;
 
