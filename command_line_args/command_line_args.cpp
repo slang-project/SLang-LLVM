@@ -19,8 +19,7 @@ optional<const CommandLineArgs> CommandLineArgs::Parse(
 
     // TODO: add support for help info flag.
 
-    // TODO: use constructor of `std::filesystem::path` with C++20 (`u8path` will be deprecated).
-    result.in_path_ = filesystem::u8path(args[1]).lexically_normal();
+    result.in_path_ = filesystem::path(args[1]).lexically_normal();
 
     (result.out_path_ = result.InputPath()).replace_extension(L".obj");
 

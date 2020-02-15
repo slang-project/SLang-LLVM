@@ -14,6 +14,8 @@ namespace SLang::CodeGenerator
      */
     class CommandLineArgs
     {
+        CommandLineArgs() noexcept = default;
+
     public:
         using PathType = std::filesystem::path;
 
@@ -44,8 +46,6 @@ namespace SLang::CodeGenerator
         [[nodiscard]] const PathType &OutputPath() const noexcept;
 
     private:
-        CommandLineArgs() noexcept = default;
-
         PathType in_path_, out_path_;
     };
 }
