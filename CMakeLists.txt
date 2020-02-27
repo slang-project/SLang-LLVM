@@ -15,7 +15,7 @@ include_directories(${LLVM_INCLUDE_DIRS})
 add_definitions(${LLVM_DEFINITIONS})
 
 # nlohmann-json
-find_package(nlohmann_json 3.7.3 REQUIRED CONFIG)
+find_package(RapidJSON 1.1.0 REQUIRED CONFIG)
 
 add_subdirectory(ir_converter)
 add_subdirectory(object_file_generator)

@@ -31,16 +31,15 @@ bool Driver::Main(
         return false;
     }
 
-    // TODO: move to \c noexcept version when it will be available in the library.
-    const auto parsed_content = nlohmann::json::parse(in_file, nullptr, false);
+    auto parsed_content = Ir::Parse(in_file);
     in_file.close();
-    if (parsed_content.is_discarded())
+    if (!parsed_content)
     {
         // TODO: message on parsing failure.
         return false;
     }
 
-    const auto program_module = Ir::Convert(parsed_content);
+    const auto program_module = parsed_content->ConvertToLlvmModule();
     if (!program_module)
     {
         // TODO: message on code conversion failure.
